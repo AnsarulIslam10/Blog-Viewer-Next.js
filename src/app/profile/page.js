@@ -12,12 +12,17 @@ const Profile = async () => {
   return (
     <div>
       <div>
-        <h3 className="text-3xl text-center my-8">Welcome to your profile</h3>
+        <h3 className="text-3xl text-center my-8 font-semibold">Welcome to your profile</h3>
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-xl">
-            {user?.given_name} {user?.family_name}
-          </h1>
-          <p>{user?.email}</p>
+          <div className="border-2 rounded-xl border-b-4 border-cyan-500 border-r-4 text-center p-10 shadow-md">
+            <p className="inline-block h-12 w-12 text-white rounded-full border-4 text-4xl border-cyan-500 bg-cyan-400">
+              {user.given_name.slice(0, 1)}
+            </p>
+            <h1 className="text-xl font-semibold">
+              {user?.given_name} {user?.family_name}
+            </h1>
+            <p className="text-sm text-gray-500 mt-2">{user?.email}</p>
+          </div>
         </div>
       </div>
     </div>

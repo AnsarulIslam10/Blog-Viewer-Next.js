@@ -7,35 +7,44 @@ const Navbar = async () => {
   const user = await getUser();
   console.log(user);
   return (
-    <div className="flex items-center justify-between">
-      <div className="">
-        <a className="text-xl">Blog Viewer</a>
+    <div className="flex items-center justify-between mt-4">
+      <div>
+        <Link href={"/"} className="text-xl text-cyan-500 font-bold">
+          Blog Viewer
+        </Link>
       </div>
       <div className="">
         <ul className="flex px-1 gap-2 items-center">
           <li>
             <Link
-              className="px-2 py-1 border-2 rounded-md bg-cyan-400 hover:bg-cyan-500 transition-all duration-300"
+              className="px-2 py-1 rounded-md bg-cyan-400 hover:bg-cyan-500 transition-all duration-300"
               href={"/"}
             >
               Home
             </Link>
           </li>
           <li>
-            <Link className="px-2 py-1 border-2 rounded-md bg-cyan-400 hover:bg-cyan-500 transition-all duration-300" href={"/profile"}>
+            <Link
+              className="px-2 py-1 rounded-md bg-cyan-400 hover:bg-cyan-500 transition-all duration-300"
+              href={"/profile"}
+            >
               Profile
             </Link>
           </li>
           {user ? (
             <>
               <li>
-                <LogoutLink className="px-2 py-1 border-2 rounded-md bg-cyan-400 hover:bg-cyan-500 transition-all duration-300">Log Out</LogoutLink>
+                <LogoutLink className="px-2 py-1 border-2 rounded-md transition-all border-cyan-500 duration-300">
+                  Log Out
+                </LogoutLink>
               </li>
             </>
           ) : (
             <>
               <li>
-                <LoginLink className="px-2 py-1 border-2 rounded-md bg-cyan-400 hover:bg-cyan-500 transition-all duration-300">Log In</LoginLink>
+                <LoginLink className="px-2 py-1 border-2 rounded-md transition-all border-cyan-500 duration-300">
+                  Log In
+                </LoginLink>
               </li>
             </>
           )}

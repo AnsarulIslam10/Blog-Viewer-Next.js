@@ -12,7 +12,7 @@ const Home = async () => {
           <Link
             key={item.id}
             href={`blog/${item?.id}`}
-            className="border shadow-sm border-t-4 border-t-cyan-500 hover:scale-105 transition-all duration-300 p-2 text-center flex justify-center items-center "
+            className="border-2 rounded-xl shadow-sm border-r-4 border-cyan-500 border-b-4 hover:scale-105 transition-all duration-300 p-2 text-center flex justify-center items-center"
           >
             <p>{item.title}</p>
           </Link>
